@@ -35,7 +35,7 @@ public class ToHashCode implements Function<Object, Integer> {
    * @param input
    *          An object.
    * @return The hash code of the specified object.
-   * @see jmona.Function#execute(java.lang.Object)
+   * @see jfcommon.functional.Function#execute(java.lang.Object)
    */
   @Override
   public Integer execute(final Object input) {

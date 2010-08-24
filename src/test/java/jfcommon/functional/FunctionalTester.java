@@ -24,6 +24,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Vector;
@@ -47,32 +48,41 @@ public class FunctionalTester {
   public static final double ZERO_DELTA = 0.0;
 
   /**
-   * Test method for {@link jfcommon.functional.Functional#any(Iterable).
+   * Test method for {@link jfcommon.functional.Functional#any(Iterable)}.
    */
   @Test
   public void testAnyIterable() {
-    Iterable<Boolean> iterable = Arrays.asList();
+    List<Boolean> iterable = new ArrayList<Boolean>();
     try {
       assertFalse(Functional.any(iterable));
     } catch (final MappingException exception) {
       TestUtils.fail(exception);
     }
 
-    iterable = Arrays.asList(true, false, false);
+    iterable.add(true);
+    iterable.add(false);
+    iterable.add(false);
     try {
       assertTrue(Functional.any(iterable));
     } catch (final MappingException exception) {
       TestUtils.fail(exception);
     }
 
-    iterable = Arrays.asList(false, false, true);
+    iterable.clear();
+    iterable.add(false);
+    iterable.add(false);
+    iterable.add(true);
+
     try {
       assertTrue(Functional.any(iterable));
     } catch (final MappingException exception) {
       TestUtils.fail(exception);
     }
 
-    iterable = Arrays.asList(false, false, false);
+    iterable.clear();
+    iterable.add(false);
+    iterable.add(false);
+    iterable.add(false);
     try {
       assertFalse(Functional.any(iterable));
     } catch (final MappingException exception) {
@@ -82,12 +92,12 @@ public class FunctionalTester {
 
   /**
    * Test method for
-   * {@link jfcommon.functional.Functional#any(Iterable, Predicate).
+   * {@link jfcommon.functional.Functional#any(Iterable, Predicate)}.
    */
   @Test
   public void testAnyIterablePredicate() {
     final Predicate<Integer> isZero = new IsZeroInteger();
-    Iterable<Integer> iterable = Arrays.asList();
+    List<Integer> iterable = new ArrayList<Integer>();
     try {
       assertFalse(Functional.any(iterable, isZero));
     } catch (final MappingException exception) {
@@ -117,7 +127,7 @@ public class FunctionalTester {
   }
 
   /**
-   * Test method for {@link jfcommon.functional.Functional#all(Iterable).
+   * Test method for {@link jfcommon.functional.Functional#all(Iterable)}.
    */
   @Test
   public void testAll() {
@@ -135,9 +145,9 @@ public class FunctionalTester {
   }
 
   /**
-   * Test method for {@link
-   * jfcommon.functional.Functional#filter(jfcommon-functional.Predicate,
-   * java.lang.Iterable)} .
+   * Test method for
+   * {@link jfcommon.functional.Functional#filter(jfcommon.functional.Predicate, java.lang.Iterable)}
+   * .
    */
   @Test
   public void testFilter() {
@@ -224,17 +234,24 @@ public class FunctionalTester {
   }
 
   /**
-   * Test method for {@link jfcommon.functional.Functional#sum(Iterable)}.
+   * Test method for {@link jfcommon.functional.Functional#sumInteger(Iterable)}
+   * .
    */
   @Test
-  public void testSum() {
+  public void testSumInteger() {
     final List<Integer> integerList = new Vector<Integer>();
     integerList.add(0);
     integerList.add(1);
     integerList.add(2);
 
     assertEquals(0 + 1 + 2, Functional.sumInteger(integerList));
+  }
 
+  /**
+   * Test method for {@link jfcommon.functional.Functional#sumDouble(Iterable)}.
+   */
+  @Test
+  public void testSumDouble() {
     final List<Double> doubleList = new Vector<Double>();
     doubleList.add(0.0);
     doubleList.add(0.1);

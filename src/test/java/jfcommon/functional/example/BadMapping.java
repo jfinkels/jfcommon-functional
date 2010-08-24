@@ -38,7 +38,7 @@ public class BadMapping implements Function<Object, Object> {
    * @return Never returns.
    * @throws MappingException
    *           Always throws this Exception.
-   * @see jmona.Function#execute(java.lang.Object)
+   * @see jfcommon.functional.Function#execute(java.lang.Object)
    */
   @Override
   public Object execute(final Object input) throws MappingException {
