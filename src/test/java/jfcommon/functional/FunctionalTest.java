@@ -1,5 +1,5 @@
 /**
- * FunctionalTester.java
+ * FunctionalTest.java
  * 
  * Copyright 2010 Jeffrey Finkelstein
  * 
@@ -42,10 +42,28 @@ import org.junit.Test;
  * @author Jeffrey Finkelstein
  * @since 0.1
  */
-public class FunctionalTester {
+public class FunctionalTest {
 
   /** Zero. */
   public static final double ZERO_DELTA = 0.0;
+
+  /**
+   * Test method for {@link jfcommon.functional.Functional#all(Iterable)}.
+   */
+  @Test
+  public void testAll() {
+    Iterable<Boolean> iterable = Arrays.asList();
+    assertTrue(Functional.all(iterable));
+
+    iterable = Arrays.asList(true, false, false);
+    assertFalse(Functional.all(iterable));
+
+    iterable = Arrays.asList(true, false, true);
+    assertFalse(Functional.all(iterable));
+
+    iterable = Arrays.asList(true, true, true);
+    assertTrue(Functional.all(iterable));
+  }
 
   /**
    * Test method for {@link jfcommon.functional.Functional#any(Iterable)}.
@@ -124,24 +142,6 @@ public class FunctionalTester {
     } catch (final MappingException exception) {
       TestUtils.fail(exception);
     }
-  }
-
-  /**
-   * Test method for {@link jfcommon.functional.Functional#all(Iterable)}.
-   */
-  @Test
-  public void testAll() {
-    Iterable<Boolean> iterable = Arrays.asList();
-    assertTrue(Functional.all(iterable));
-
-    iterable = Arrays.asList(true, false, false);
-    assertFalse(Functional.all(iterable));
-
-    iterable = Arrays.asList(true, false, true);
-    assertFalse(Functional.all(iterable));
-
-    iterable = Arrays.asList(true, true, true);
-    assertTrue(Functional.all(iterable));
   }
 
   /**
@@ -234,17 +234,16 @@ public class FunctionalTester {
   }
 
   /**
-   * Test method for {@link jfcommon.functional.Functional#sumInteger(Iterable)}
-   * .
+   * Test method for {@link jfcommon.functional.Functional#sumByte(Iterable)} .
    */
   @Test
-  public void testSumInteger() {
-    final List<Integer> integerList = new Vector<Integer>();
-    integerList.add(0);
-    integerList.add(1);
-    integerList.add(2);
+  public void testSumByte() {
+    final List<Byte> list = new Vector<Byte>();
+    list.add((byte) 0);
+    list.add((byte) 1);
+    list.add((byte) 2);
 
-    assertEquals(0 + 1 + 2, Functional.sumInteger(integerList));
+    assertEquals(0 + 1 + 2, Functional.sumByte(list));
   }
 
   /**
@@ -259,6 +258,20 @@ public class FunctionalTester {
 
     assertEquals(0.0 + 0.1 + 0.2, Functional.sumDouble(doubleList), ZERO_DELTA);
 
+  }
+
+  /**
+   * Test method for {@link jfcommon.functional.Functional#sumInteger(Iterable)}
+   * .
+   */
+  @Test
+  public void testSumInteger() {
+    final List<Integer> integerList = new Vector<Integer>();
+    integerList.add(0);
+    integerList.add(1);
+    integerList.add(2);
+
+    assertEquals(0 + 1 + 2, Functional.sumInteger(integerList));
   }
 
   /**

@@ -1,5 +1,5 @@
 /**
- * RangeListTester.java
+ * RangeListTest.java
  * 
  * Copyright 2010 Jeffrey Finkelstein
  * 
@@ -32,7 +32,7 @@ import org.junit.Test;
  * @author Jeffrey Finkelstein
  * @since 0.1
  */
-public class RangeListTester {
+public class RangeListTest {
 
   /**
    * Test method for {@link jfcommon.functional.RangeList#RangeList(int)}.

@@ -1,5 +1,5 @@
 /**
- * AbstractRangeTester.java
+ * AbstractRangeTest.java
  * 
  * Copyright 2009, 2010 Jeffrey Finkelstein
  * 
@@ -37,7 +37,7 @@ import org.junit.Test;
  * @author Jeffrey Finkelstein
  * @since 0.1
  */
-public class AbstractRangeTester {
+public class AbstractRangeTest {
 
   /** The maximum + 1 number in the range. */
   public static final int MAX = 17;
@@ -45,6 +45,49 @@ public class AbstractRangeTester {
   public static final int MIN = 4;
   /** The increment by which the iterator steps over the range. */
   public static final int STEP = 3;
+
+  /**
+   * Test method for
+   * {@link jfcommon.functional.AbstractRange#AbstractRange(int)}.
+   */
+  @Test
+  public void testAbstractRangeInt() {
+    int j = 0;
+    for (final int i : new Range(MAX)) {
+      assertEquals(j, i);
+      j += 1;
+    }
+
+    assertEquals(j, MAX);
+  }
+
+  /**
+   * Test method for
+   * {@link jfcommon.functional.AbstractRange#AbstractRange(int, int)}.
+   */
+  @Test
+  public void testAbstractRangeIntInt() {
+    int j = MIN;
+    for (final int i : new Range(MIN, MAX)) {
+      assertEquals(j, i);
+      j += 1;
+    }
+
+    assertEquals(j, MAX);
+  }
+
+  /**
+   * Test method for
+   * {@link jfcommon.functional.AbstractRange#AbstractRange(int, int, int)}.
+   */
+  @Test
+  public void testAbstractRangeIntIntInt() {
+    int j = MIN;
+    for (final int i : new Range(MIN, MAX, STEP)) {
+      assertEquals(j, i);
+      j += STEP;
+    }
+  }
 
   /**
    * Test method for {@link jfcommon.functional.AbstractRange#hasNext()}.
@@ -117,49 +160,6 @@ public class AbstractRangeTester {
       range.next();
     } catch (final NoSuchElementException exception) {
       assertTrue(exception instanceof NoSuchElementException);
-    }
-  }
-
-  /**
-   * Test method for
-   * {@link jfcommon.functional.AbstractRange#AbstractRange(int)}.
-   */
-  @Test
-  public void testAbstractRangeInt() {
-    int j = 0;
-    for (final int i : new Range(MAX)) {
-      assertEquals(j, i);
-      j += 1;
-    }
-
-    assertEquals(j, MAX);
-  }
-
-  /**
-   * Test method for
-   * {@link jfcommon.functional.AbstractRange#AbstractRange(int, int)}.
-   */
-  @Test
-  public void testAbstractRangeIntInt() {
-    int j = MIN;
-    for (final int i : new Range(MIN, MAX)) {
-      assertEquals(j, i);
-      j += 1;
-    }
-
-    assertEquals(j, MAX);
-  }
-
-  /**
-   * Test method for
-   * {@link jfcommon.functional.AbstractRange#AbstractRange(int, int, int)}.
-   */
-  @Test
-  public void testAbstractRangeIntIntInt() {
-    int j = MIN;
-    for (final int i : new Range(MIN, MAX, STEP)) {
-      assertEquals(j, i);
-      j += STEP;
     }
   }
 

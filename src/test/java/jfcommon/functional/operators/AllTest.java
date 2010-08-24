@@ -31,8 +31,8 @@ import org.junit.runners.Suite.SuiteClasses;
  * @since 0.1
  */
 @RunWith(Suite.class)
-@SuiteClasses({ IsZeroDoubleTester.class, IsZeroFloatTester.class,
-    IsZeroIntegerTester.class, IsZeroLongTester.class, ToClassTester.class })
+@SuiteClasses({ IsZeroDoubleTest.class, IsZeroFloatTest.class,
+    IsZeroIntegerTest.class, IsZeroLongTest.class, ToClassTest.class })
 public class AllTest {
   // intentionally unimplemented
 }

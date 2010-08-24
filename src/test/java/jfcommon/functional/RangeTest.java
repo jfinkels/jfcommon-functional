@@ -1,5 +1,5 @@
 /**
- * RangeTester.java
+ * RangeTest.java
  * 
  * Copyright 2010 Jeffrey Finkelstein
  * 
@@ -30,7 +30,19 @@ import org.junit.Test;
  * @author Jeffrey Finkelstein
  * @since 0.1
  */
-public class RangeTester {
+public class RangeTest {
+
+  /**
+   * Test method for {@link jfcommon.functional.Range#getValue()}.
+   */
+  @Test
+  public void testGetValue() {
+    final Range range = new Range(10);
+    for (int i = 0; i < 10; ++i) {
+      range.next();
+      assertEquals(i, range.getValue().intValue());
+    }
+  }
 
   /**
    * Test method for {@link jfcommon.functional.Range#Range(int)}.
@@ -72,18 +84,6 @@ public class RangeTester {
     }
 
     assertEquals(10, j);
-  }
-
-  /**
-   * Test method for {@link jfcommon.functional.Range#getValue()}.
-   */
-  @Test
-  public void testGetValue() {
-    final Range range = new Range(10);
-    for (int i = 0; i < 10; ++i) {
-      range.next();
-      assertEquals(i, range.getValue().intValue());
-    }
   }
 
 }

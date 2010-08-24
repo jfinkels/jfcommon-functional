@@ -1,7 +1,7 @@
 /**
- * IsZeroDoubleTester.java
+ * MappingExceptionTest.java
  * 
- * Copyright 2010 Jeffrey Finkelstein
+ * Copyright 2009, 2010 Jeffrey Finkelstein
  * 
  * This file is part of jfcommon-functional.
  * 
@@ -18,32 +18,19 @@
  * You should have received a copy of the GNU General Public License along with
  * jfcommon-functional. If not, see <http://www.gnu.org/licenses/>.
  */
-package jfcommon.functional.operators;
+package jfcommon.functional;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
-import org.junit.Test;
+import jfcommon.test.AbstractExceptionTest;
 
 /**
- * Test class for the IsZeroDouble class.
+ * Test class for the MappingException class.
  * 
  * @author Jeffrey Finkelstein
  * @since 0.1
  */
-public class IsZeroDoubleTester {
-
-  /**
-   * Test method for
-   * {@link jfcommon.functional.operators.IsZeroDouble#execute(java.lang.Double)}
-   * .
-   */
-  @Test
-  public void testExecute() {
-    IsZeroDouble condition = new IsZeroDouble();
-    assertFalse(condition.execute(1.0));
-    assertFalse(condition.execute(-1.0));
-    assertTrue(condition.execute(0.0));
+public class MappingExceptionTest extends AbstractExceptionTest {
+  /** Instantiates this test class for the MappingException. */
+  public MappingExceptionTest() {
+    super(MappingException.class);
   }
-
 }

@@ -33,10 +33,10 @@ import java.util.NoSuchElementException;
  */
 public class IterableString implements Iterable<Character>,
     Iterator<Character> {
-  /** The string over which this class iterates. */
-  private final String string;
   /** The pointer representing the current character index in the string. */
   private int pointer = 0;
+  /** The string over which this class iterates. */
+  private final String string;
 
   /**
    * Use the specified String as the String over which to iterate.
@@ -49,17 +49,6 @@ public class IterableString implements Iterable<Character>,
   }
 
   /**
-   * Gets an Iterator over each of the characters of the String.
-   * 
-   * @return An Iterator over each of the characters of the String.
-   * @see java.lang.Iterable#iterator()
-   */
-  @Override
-  public Iterator<Character> iterator() {
-    return new IterableString(this.string);
-  }
-
-  /**
    * Whether this String has any more characters over which to iterate.
    * 
    * @return Whether this String has any more characters over which to iterate.
@@ -68,6 +57,17 @@ public class IterableString implements Iterable<Character>,
   @Override
   public boolean hasNext() {
     return this.pointer < this.string.length();
+  }
+
+  /**
+   * Gets an Iterator over each of the characters of the String.
+   * 
+   * @return An Iterator over each of the characters of the String.
+   * @see java.lang.Iterable#iterator()
+   */
+  @Override
+  public Iterator<Character> iterator() {
+    return new IterableString(this.string);
   }
 
   /**

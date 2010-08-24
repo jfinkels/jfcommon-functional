@@ -31,6 +31,22 @@ import java.util.Vector;
  */
 public final class Functional {
 
+  /** An instance of the identity predicate, which always returns its input. */
+  public static final Predicate<Boolean> IDENTITY_CONDITION = new Predicate<Boolean>() {
+    /**
+     * Returns the specified input.
+     * 
+     * @param input
+     *          The value to return.
+     * @return The specified input.
+     * @see jfcommon-functional.Function#execute(java.lang.Object)
+     */
+    @Override
+    public Boolean execute(final Boolean input) {
+      return input;
+    }
+  };
+
   /**
    * Determines whether every element in the specified Iterable is true (similar
    * to Python's <a
@@ -51,22 +67,6 @@ public final class Functional {
 
     return true;
   }
-
-  /** An instance of the identity predicate, which always returns its input. */
-  public static final Predicate<Boolean> IDENTITY_CONDITION = new Predicate<Boolean>() {
-    /**
-     * Returns the specified input.
-     * 
-     * @param input
-     *          The value to return.
-     * @return The specified input.
-     * @see jfcommon-functional.Function#execute(java.lang.Object)
-     */
-    @Override
-    public Boolean execute(final Boolean input) {
-      return input;
-    }
-  };
 
   /**
    * Determines whether any element in the specified Iterable is true (similar
@@ -169,6 +169,25 @@ public final class Functional {
   }
 
   /**
+   * Returns the sum of each of the bytes over which the specified iterable
+   * iterates as an integer.
+   * 
+   * @param iterable
+   *          The iterable over which to sum the bytes.
+   * @return The sum of the bytes over which the specified iterable iterates as
+   *         an integer.
+   */
+  public static <N extends Number> int sumByte(final Iterable<N> iterable) {
+    int sum = 0;
+
+    for (final Number n : iterable) {
+      sum += n.byteValue();
+    }
+
+    return sum;
+  }
+
+  /**
    * Returns the sum of the doubles over which the specified iterable iterates.
    * 
    * @param iterable
@@ -200,24 +219,6 @@ public final class Functional {
     }
 
     return result;
-  }
-
-  /**
-   * Returns the sum of each of the bytes over which the specified iterable
-   * iterates.
-   * 
-   * @param iterable
-   *          The iterable over which to sum the bytes.
-   * @return The sum of the bytes over which the specified iterable iterates.
-   */
-  public static <N extends Number> int sumBytes(final Iterable<N> iterable) {
-    int sum = 0;
-
-    for (final Number n : iterable) {
-      sum += n.byteValue();
-    }
-
-    return sum;
   }
 
   /**

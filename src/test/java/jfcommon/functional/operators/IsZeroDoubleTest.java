@@ -1,7 +1,7 @@
 /**
- * AllTest.java
+ * IsZeroDoubleTest.java
  * 
- * Copyright 2009, 2010 Jeffrey Finkelstein
+ * Copyright 2010 Jeffrey Finkelstein
  * 
  * This file is part of jfcommon-functional.
  * 
@@ -18,22 +18,32 @@
  * You should have received a copy of the GNU General Public License along with
  * jfcommon-functional. If not, see <http://www.gnu.org/licenses/>.
  */
-package jfcommon.functional;
+package jfcommon.functional.operators;
 
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
-import org.junit.runners.Suite.SuiteClasses;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
 
 /**
- * Runs all tests in this package.
+ * Test class for the IsZeroDouble class.
  * 
  * @author Jeffrey Finkelstein
  * @since 0.1
  */
-@RunWith(Suite.class)
-@SuiteClasses({ AbstractRangeTest.class, FunctionalTest.class,
-    HashSetFromIterableTest.class, IterableStringTest.class,
-    RangeListTest.class, RangeTest.class })
-public class AllTest {
-  // intentionally unimplemented
+public class IsZeroDoubleTest {
+
+  /**
+   * Test method for
+   * {@link jfcommon.functional.operators.IsZeroDouble#execute(java.lang.Double)}
+   * .
+   */
+  @Test
+  public void testExecute() {
+    IsZeroDouble condition = new IsZeroDouble();
+    assertFalse(condition.execute(1.0));
+    assertFalse(condition.execute(-1.0));
+    assertTrue(condition.execute(0.0));
+  }
+
 }

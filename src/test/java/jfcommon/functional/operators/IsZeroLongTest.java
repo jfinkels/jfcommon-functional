@@ -1,5 +1,5 @@
 /**
- * IsZeroIntegerTester.java
+ * IsZeroLongTest.java
  * 
  * Copyright 2010 Jeffrey Finkelstein
  * 
@@ -26,24 +26,23 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 /**
- * Test class for the IsZeroInteger class.
+ * Test class for the IsZeroLong class.
  * 
  * @author Jeffrey Finkelstein
  * @since 0.1
  */
-public class IsZeroIntegerTester {
+public class IsZeroLongTest {
 
   /**
    * Test method for
-   * {@link jfcommon.functional.operators.IsZeroInteger#execute(java.lang.Integer)}
-   * .
+   * {@link jfcommon.functional.operators.IsZeroLong#execute(java.lang.Long)} .
    */
   @Test
   public void testExecute() {
-    IsZeroInteger condition = new IsZeroInteger();
-    assertFalse(condition.execute(1));
-    assertFalse(condition.execute(-1));
-    assertTrue(condition.execute(0));
+    IsZeroLong condition = new IsZeroLong();
+    assertFalse(condition.execute(1L));
+    assertFalse(condition.execute(-1L));
+    assertTrue(condition.execute(0L));
   }
 
 }

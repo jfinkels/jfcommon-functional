@@ -1,5 +1,5 @@
 /**
- * HashSetFromIterableTester.java
+ * ToClassTest.java
  * 
  * Copyright 2010 Jeffrey Finkelstein
  * 
@@ -18,42 +18,31 @@
  * You should have received a copy of the GNU General Public License along with
  * jfcommon-functional. If not, see <http://www.gnu.org/licenses/>.
  */
-package jfcommon.functional;
+package jfcommon.functional.operators;
 
-import static org.junit.Assert.assertTrue;
-
-import java.util.ArrayList;
-import java.util.List;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 /**
- * Test class for the HashSetFromIterable class.
+ * Test class for the ToClass class.
  * 
  * @author Jeffrey Finkelstein
  * @since 0.1
  */
-public class HashSetFromIterableTester {
+public class ToClassTest {
 
   /**
    * Test method for
-   * {@link jfcommon.functional.HashSetFromIterable#HashSetFromIterable(java.lang.Iterable)}
-   * .
+   * {@link jfcommon.functional.operators.ToClass#execute(java.lang.Object)}.
    */
   @Test
-  public void testHashSetFromIterable() {
-    final List<Integer> list = new ArrayList<Integer>();
-
-    for (final int i : new Range(100)) {
-      list.add(i);
-    }
-
-    final HashSetFromIterable<Integer> set = new HashSetFromIterable<Integer>(
-        list);
-
-    for (final int i : new Range(100)) {
-      assertTrue(set.contains(i));
-    }
+  public void testExecute() {
+    ToClass<Number> function = new ToClass<Number>();
+    assertEquals(Integer.class, function.execute(new Integer(0)));
+    assertEquals(Double.class, function.execute(new Double(0.0d)));
+    assertEquals(Long.class, function.execute(new Long(0l)));
+    assertEquals(Float.class, function.execute(new Float(0.0f)));
   }
 
 }

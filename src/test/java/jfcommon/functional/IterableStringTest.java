@@ -1,5 +1,5 @@
 /**
- * IterableStringTester.java
+ * IterableStringTest.java
  * 
  * Copyright 2010 Jeffrey Finkelstein
  * 
@@ -37,9 +37,17 @@ import org.junit.Test;
  * @author Jeffrey Finkelstein
  * @since 0.1
  */
-public class IterableStringTester {
+public class IterableStringTest {
   /** The string to test. */
   public static final String STRING = "Hello, world!";
+
+  /**
+   * Test method for {@link jfcommon.functional.IterableString#hasNext()}.
+   */
+  @Test
+  public void testHasNext() {
+    assertFalse(new IterableString("").hasNext());
+  }
 
   /**
    * Test method for {@link jfcommon.functional.IterableString#iterator()}.
@@ -61,14 +69,6 @@ public class IterableStringTester {
     } catch (final NoSuchElementException exception) {
       assertEquals(STRING.length(), i);
     }
-  }
-
-  /**
-   * Test method for {@link jfcommon.functional.IterableString#hasNext()}.
-   */
-  @Test
-  public void testHasNext() {
-    assertFalse(new IterableString("").hasNext());
   }
 
   /**

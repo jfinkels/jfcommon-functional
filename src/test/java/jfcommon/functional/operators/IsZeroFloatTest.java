@@ -1,5 +1,5 @@
 /**
- * IsZeroFloatTester.java
+ * IsZeroFloatTest.java
  * 
  * Copyright 2010 Jeffrey Finkelstein
  * 
@@ -31,7 +31,7 @@ import org.junit.Test;
  * @author Jeffrey Finkelstein
  * @since 0.1
  */
-public class IsZeroFloatTester {
+public class IsZeroFloatTest {
 
   /**
    * Test method for
