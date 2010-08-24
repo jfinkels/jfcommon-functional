@@ -3,19 +3,20 @@
  * 
  * Copyright 2010 Jeffrey Finkelstein
  * 
- * This file is part of jmona.
+ * This file is part of jfcommon-functional.
  * 
- * jmona is free software: you can redistribute it and/or modify it under the
- * terms of the GNU General Public License as published by the Free Software
- * Foundation, either version 3 of the License, or (at your option) any later
- * version.
+ * jfcommon-functional is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by the Free
+ * Software Foundation, either version 3 of the License, or (at your option) any
+ * later version.
  * 
- * jmona is distributed in the hope that it will be useful, but WITHOUT ANY
- * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
- * A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ * jfcommon-functional is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+ * details.
  * 
  * You should have received a copy of the GNU General Public License along with
- * jmona. If not, see <http://www.gnu.org/licenses/>.
+ * jfcommon-functional. If not, see <http://www.gnu.org/licenses/>.
  */
 package jfcommon.functional;
 
@@ -38,7 +39,7 @@ import org.junit.Test;
  * Test class for the Functional class.
  * 
  * @author Jeffrey Finkelstein
- * @since 0.3
+ * @since 0.1
  */
 public class FunctionalTester {
 
@@ -134,9 +135,9 @@ public class FunctionalTester {
   }
 
   /**
-   * Test method for
-   * {@link jfcommon.functional.Functional#filter(jmona.Predicate, java.lang.Iterable)}
-   * .
+   * Test method for {@link
+   * jfcommon.functional.Functional#filter(jfcommon-functional.Predicate,
+   * java.lang.Iterable)} .
    */
   @Test
   public void testFilter() {
@@ -193,7 +194,7 @@ public class FunctionalTester {
 
   /**
    * Test method for
-   * {@link jfcommon.functional.Functional#map(jmona.Function, java.lang.Iterable)}
+   * {@link jfcommon.functional.Functional#map(jfcommon.functional.Function, java.lang.Iterable)}
    * .
    */
   @Test

@@ -26,7 +26,7 @@ import jfcommon.functional.MappingException;
  * A function which always throws an Exception.
  * 
  * @author Jeffrey Finkelstein
- * @since 0.3
+ * @since 0.1
  */
 public class BadMapping implements Function<Object, Object> {
 

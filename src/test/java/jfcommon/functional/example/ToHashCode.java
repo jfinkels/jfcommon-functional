@@ -25,7 +25,7 @@ import jfcommon.functional.Function;
  * A function which maps objects to their hash codes.
  * 
  * @author Jeffrey Finkelstein
- * @since 0.3
+ * @since 0.1
  */
 public class ToHashCode implements Function<Object, Integer> {
 
