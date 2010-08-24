@@ -10,6 +10,14 @@
 
   <dependencies>
     <!-- TEST-COMPILE DEPENDENCIES -->
+    <dependency> <!-- testing tools -->
+      <groupId>jfcommon</groupId>
+      <artifactId>test</artifactId>
+      <version>${version.dependency.jfcommon.test}</version>
+      <scope>test</scope>
+      <type>jar</type>
+    </dependency>
+    
     <dependency> <!-- JUnit 4 unit testing framework -->
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -21,6 +29,7 @@
 
   <properties>
     <!-- dependency versions -->
+    <version.dependency.jfcommon.test>0.1</version.dependency.jfcommon.test>
     <version.dependency.junit>4.8.1</version.dependency.junit>
     
     <!-- plugin versions -->
@@ -406,7 +415,7 @@
   <!-- </mailingLists> -->
 
   <scm>
-    <connection>scm:git:git://github.com/jfinkels/jfcommon-functional.git</connection>
+    <connection>scm:git:git@github.com:jfinkels/jfcommon-functional.git</connection>
     <url>http://github.com/jfinkels/jfcommon-functional</url>
   </scm>
 
@@ -422,8 +431,8 @@
     <downloadUrl>http://www.cs.tufts.edu/~jfinke02/jfcommon/functional/</downloadUrl>
     <repository>
       <uniqueVersion>false</uniqueVersion>
-      <id>jfcommon.repo</id>
-      <name>jfcommon repository</name>
+      <id>jmona.repo</id>
+      <name>jmona repository</name>
       <url>scp://linux.cs.tufts.edu/h/jfinke02/public_html/repo</url>
       <layout>default</layout>
     </repository>
