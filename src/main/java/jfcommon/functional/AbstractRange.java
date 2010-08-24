@@ -111,9 +111,9 @@ public abstract class AbstractRange<N extends Number> implements Iterator<N>,
    * 
    * @return The terminal number in this range.
    */
-  protected int end() {
+/*  protected int end() {
     return this.end;
-  }
+  }*/
 
   /**
    * Gets the current value of this range.
@@ -138,9 +138,9 @@ public abstract class AbstractRange<N extends Number> implements Iterator<N>,
    * 
    * @return The increment between numbers in this range.
    */
-  protected int increment() {
+/*  protected int increment() {
     return this.increment;
-  }
+  }*/
 
   /**
    * Get an Iterator over this range of integers.
@@ -191,16 +191,16 @@ public abstract class AbstractRange<N extends Number> implements Iterator<N>,
    * @param newCurrent
    *          The current value of this iterator.
    */
-  protected void setCurrent(final int newCurrent) {
+/*  protected void setCurrent(final int newCurrent) {
     this.current = newCurrent;
-  }
+  }*/
 
   /**
    * Gets the initial number in this range.
    * 
    * @return The initial number in this range.
    */
-  protected int start() {
+/*  protected int start() {
     return this.start;
-  }
+  }*/
 }

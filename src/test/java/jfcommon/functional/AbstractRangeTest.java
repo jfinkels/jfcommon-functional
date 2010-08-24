@@ -32,13 +32,12 @@ import jfcommon.test.TestUtils;
 import org.junit.Test;
 
 /**
- * Test class for the AbstractRange class.
+ * Test class for the {@link AbstractRange} class.
  * 
  * @author Jeffrey Finkelstein
  * @since 0.1
  */
 public class AbstractRangeTest {
-
   /** The maximum + 1 number in the range. */
   public static final int MAX = 17;
   /** The minimum number in the range. */
@@ -89,6 +88,22 @@ public class AbstractRangeTest {
     }
   }
 
+  /** Test method for {@link jfcommon.functional.AbstractRange#current()}. */
+  @Test
+  public void testCurrent() {
+    final AbstractRange<Integer> range = new Range(MAX);
+    assertEquals(-1, range.current());
+    range.next();
+    assertEquals(0, range.current());
+  }
+
+  /** Test method for {@link jfcommon.functional.AbstractRange#end()}. */
+/*  @Test
+  public void testEnd() {
+    final AbstractRange<Integer> range = new Range(MAX);
+    assertEquals(MAX, range.end());
+  }*/
+
   /**
    * Test method for {@link jfcommon.functional.AbstractRange#hasNext()}.
    */
@@ -103,6 +118,15 @@ public class AbstractRangeTest {
     assertFalse(range.hasNext());
 
   }
+
+  /**
+   * Test method for {@link jfcommon.functional.AbstractRange#increment()}.
+   */
+/*  @Test
+  public void testIncrement() {
+    final AbstractRange<Integer> range = new Range(MIN, MAX, STEP);
+    assertEquals(STEP, range.increment());
+  }*/
 
   /**
    * Test method for {@link jfcommon.functional.AbstractRange#iterator()}.
@@ -176,5 +200,24 @@ public class AbstractRangeTest {
       assertTrue(exception instanceof UnsupportedOperationException);
     }
   }
+
+  /**
+   * Test method for {@link jfcommon.functional.AbstractRange#setCurrent(int)}.
+   */
+/*  @Test
+  public void testSetCurrent() {
+    final AbstractRange<Integer> range = new Range(MAX);
+    range.setCurrent(MIN);
+    assertEquals(MIN, range.current());
+  }*/
+
+  /**
+   * Test method for {@link jfcommon.functional.AbstractRange#start()}.
+   */
+/*  @Test
+  public void testStart() {
+    final AbstractRange<Integer> range = new Range(MIN, MAX);
+    assertEquals(MIN, range.start());
+  }*/
 
 }
