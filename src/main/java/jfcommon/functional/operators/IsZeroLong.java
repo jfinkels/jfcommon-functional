@@ -37,7 +37,7 @@ public class IsZeroLong implements IsZero<Long> {
    */
   @Override
   public Boolean execute(final Long input) {
-    return input == 0l;
+    return input == 0L;
   }
 
 }

@@ -26,6 +26,8 @@ import jfcommon.functional.Predicate;
  * Predicate for testing whether a specified number is 0.
  * 
  * @author Jeffrey Finkelstein
+ * @param <N>
+ *          The type of number to test whether it is zero.
  * @since 0.1
  */
 public interface IsZero<N extends Number> extends Predicate<N> {

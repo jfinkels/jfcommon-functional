@@ -32,6 +32,13 @@ import org.junit.Test;
  */
 public class RangeTest {
 
+  /** The minimum number in the range to test. */
+  public static final int MIN = -100;
+  /** The maximum number in the range to test. */
+  public static final int MAX = 100;
+  /** The increment by which numbers increase in the range to test. */
+  public static final int STEP = 3;
+
   /**
    * Test method for {@link jfcommon.functional.Range#getValue()}.
    */

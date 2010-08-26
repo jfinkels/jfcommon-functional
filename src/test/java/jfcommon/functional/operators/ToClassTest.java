@@ -41,7 +41,7 @@ public class ToClassTest {
     ToClass<Number> function = new ToClass<Number>();
     assertEquals(Integer.class, function.execute(new Integer(0)));
     assertEquals(Double.class, function.execute(new Double(0.0d)));
-    assertEquals(Long.class, function.execute(new Long(0l)));
+    assertEquals(Long.class, function.execute(new Long(0L)));
     assertEquals(Float.class, function.execute(new Float(0.0f)));
   }
 

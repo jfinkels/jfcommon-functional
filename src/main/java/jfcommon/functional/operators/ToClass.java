@@ -26,6 +26,8 @@ import jfcommon.functional.Function;
  * Maps an object to its class.
  * 
  * @author Jeffrey Finkelstein
+ * @param <T>
+ *          The type of object whose class to get.
  * @since 0.1
  */
 public class ToClass<T> implements Function<T, Class<?>> {

@@ -94,6 +94,8 @@ public final class Functional {
    *          The type of element in the iterable.
    * @param iterable
    *          The iterable to check for any true values.
+   * @param predicate
+   *          The predicate with which to test each element of the iterable.
    * @return Whether any value in the specified iterable is true.
    * @throws MappingException
    *           If there is a problem determining the truth value of any of the
@@ -177,11 +179,11 @@ public final class Functional {
    * @return The sum of the bytes over which the specified iterable iterates as
    *         an integer.
    */
-  public static <N extends Number> int sumByte(final Iterable<N> iterable) {
+  public static int sumByte(final Iterable<Byte> iterable) {
     int sum = 0;
 
-    for (final Number n : iterable) {
-      sum += n.byteValue();
+    for (final Byte n : iterable) {
+      sum += n;
     }
 
     return sum;
