@@ -174,16 +174,18 @@ public final class Functional {
    * Returns the sum of each of the bytes over which the specified iterable
    * iterates as an integer.
    * 
+   * @param <N>
+   *          The type of number to sum (as bytes).
    * @param iterable
    *          The iterable over which to sum the bytes.
    * @return The sum of the bytes over which the specified iterable iterates as
    *         an integer.
    */
-  public static int sumByte(final Iterable<Byte> iterable) {
+  public static <N extends Number> int sumByte(final Iterable<N> iterable) {
     int sum = 0;
 
-    for (final Byte n : iterable) {
-      sum += n;
+    for (final N n : iterable) {
+      sum += n.byteValue();
     }
 
     return sum;
@@ -192,15 +194,17 @@ public final class Functional {
   /**
    * Returns the sum of the doubles over which the specified iterable iterates.
    * 
+   * @param <N>
+   *          The type of number to sum (as doubles).
    * @param iterable
    *          The iterable over which to sum the doubles.
    * @return The sum of the doubles over which the specified iterable iterates.
    */
-  public static double sumDouble(final Iterable<Double> iterable) {
+  public static <N extends Number> double sumDouble(final Iterable<N> iterable) {
     double result = 0;
 
-    for (final Double d : iterable) {
-      result += d;
+    for (final N d : iterable) {
+      result += d.doubleValue();
     }
 
     return result;
@@ -209,15 +213,17 @@ public final class Functional {
   /**
    * Returns the sum of the integers over which the specified iterable iterates.
    * 
+   * @param <N>
+   *          The type of number to sum (as integers).
    * @param iterable
    *          The iterable over which to sum the integers.
    * @return The sum of the integers over which the specified iterable iterates.
    */
-  public static int sumInteger(final Iterable<Integer> iterable) {
+  public static <N extends Number> int sumInteger(final Iterable<N> iterable) {
     int result = 0;
 
-    for (final Integer i : iterable) {
-      result += i;
+    for (final N i : iterable) {
+      result += i.intValue();
     }
 
     return result;
