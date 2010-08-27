@@ -1,5 +1,5 @@
 /**
- * AllTest.java
+ * DoubleConstantFunctionTester.java
  * 
  * Copyright 2009, 2010 Jeffrey Finkelstein
  * 
@@ -20,22 +20,32 @@
  */
 package jfcommon.functional;
 
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
-import org.junit.runners.Suite.SuiteClasses;
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
 
 /**
- * Runs all tests in this package.
+ * Test class for the {@link DoubleConstantFunction} class.
  * 
  * @author Jeffrey Finkelstein
  * @since 0.1
  */
-@RunWith(Suite.class)
-@SuiteClasses({ AbstractRangeTest.class, ConstantFunctionTest.class,
-    DoubleConstantFunctionTest.class, DoubleIdentityFunctionTest.class,
-    FunctionalTest.class, HashSetFromIterableTest.class,
-    IdentityFunctionTest.class, IterableStringTest.class, RangeListTest.class,
-    RangeTest.class })
-public class AllTest {
-  // intentionally unimplemented
+public class DoubleConstantFunctionTest {
+
+  /** Zero. */
+  public static final double ZERO_DELTA = 0.0;
+
+  /**
+   * Test method for
+   * {@link jfcommon.functional.example.calc.functions.DoubleConstantFunction#DoubleConstantFunction(java.lang.Double)}
+   * .
+   */
+  @Test
+  public void testDoubleConstantFunction() {
+    final DoubleConstantFunction function = new DoubleConstantFunction(1.0);
+    assertEquals(1.0, function.execute(0.0), ZERO_DELTA);
+    assertEquals(1.0, function.execute(1.0), ZERO_DELTA);
+    assertEquals(1.0, function.execute(2.0), ZERO_DELTA);
+  }
+
 }

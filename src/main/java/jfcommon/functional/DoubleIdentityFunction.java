@@ -1,5 +1,5 @@
 /**
- * AllTest.java
+ * DoubleIdentityFunction.java
  * 
  * Copyright 2009, 2010 Jeffrey Finkelstein
  * 
@@ -20,22 +20,22 @@
  */
 package jfcommon.functional;
 
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
-import org.junit.runners.Suite.SuiteClasses;
-
 /**
- * Runs all tests in this package.
+ * The identity function on Doubles.
  * 
  * @author Jeffrey Finkelstein
  * @since 0.1
  */
-@RunWith(Suite.class)
-@SuiteClasses({ AbstractRangeTest.class, ConstantFunctionTest.class,
-    DoubleConstantFunctionTest.class, DoubleIdentityFunctionTest.class,
-    FunctionalTest.class, HashSetFromIterableTest.class,
-    IdentityFunctionTest.class, IterableStringTest.class, RangeListTest.class,
-    RangeTest.class })
-public class AllTest {
-  // intentionally unimplemented
+public class DoubleIdentityFunction extends IdentityFunction<Double> {
+  /** A singleton instance of this class. */
+  private static final IdentityFunction<Double> INSTANCE = new DoubleIdentityFunction();
+
+  /**
+   * Get a singleton instance of this class.
+   * 
+   * @return A singleton instance of this class.
+   */
+  public static IdentityFunction<Double> newInstance() {
+    return INSTANCE;
+  }
 }

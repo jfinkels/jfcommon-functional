@@ -1,5 +1,5 @@
 /**
- * AllTest.java
+ * IdentityFunction.java
  * 
  * Copyright 2009, 2010 Jeffrey Finkelstein
  * 
@@ -20,22 +20,27 @@
  */
 package jfcommon.functional;
 
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
-import org.junit.runners.Suite.SuiteClasses;
-
 /**
- * Runs all tests in this package.
+ * The identity function on the domain of type T.
  * 
+ * @param <T>
+ *          The type of the domain of this function.
  * @author Jeffrey Finkelstein
  * @since 0.1
  */
-@RunWith(Suite.class)
-@SuiteClasses({ AbstractRangeTest.class, ConstantFunctionTest.class,
-    DoubleConstantFunctionTest.class, DoubleIdentityFunctionTest.class,
-    FunctionalTest.class, HashSetFromIterableTest.class,
-    IdentityFunctionTest.class, IterableStringTest.class, RangeListTest.class,
-    RangeTest.class })
-public class AllTest {
-  // intentionally unimplemented
+public class IdentityFunction<T> implements Function<T, T> {
+
+  /**
+   * Return exactly the specified input.
+   * 
+   * @param input
+   *          The input.
+   * @return Exactly the specified input.
+   * @see jfcommon.functional.Function#execute(java.lang.Object)
+   */
+  @Override
+  public T execute(final T input) {
+    return input;
+  }
+
 }

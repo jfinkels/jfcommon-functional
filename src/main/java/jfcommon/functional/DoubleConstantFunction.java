@@ -1,5 +1,5 @@
 /**
- * AllTest.java
+ * DoubleConstantFunction.java
  * 
  * Copyright 2009, 2010 Jeffrey Finkelstein
  * 
@@ -20,22 +20,22 @@
  */
 package jfcommon.functional;
 
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
-import org.junit.runners.Suite.SuiteClasses;
-
 /**
- * Runs all tests in this package.
+ * A constant real-valued function.
  * 
  * @author Jeffrey Finkelstein
  * @since 0.1
  */
-@RunWith(Suite.class)
-@SuiteClasses({ AbstractRangeTest.class, ConstantFunctionTest.class,
-    DoubleConstantFunctionTest.class, DoubleIdentityFunctionTest.class,
-    FunctionalTest.class, HashSetFromIterableTest.class,
-    IdentityFunctionTest.class, IterableStringTest.class, RangeListTest.class,
-    RangeTest.class })
-public class AllTest {
-  // intentionally unimplemented
+public class DoubleConstantFunction extends ConstantFunction<Double, Double> {
+
+  /**
+   * Instantiate this function with the specified constant value.
+   * 
+   * @param initialValue
+   *          The constant value of this function.
+   */
+  public DoubleConstantFunction(final Double initialValue) {
+    super(initialValue);
+  }
+
 }

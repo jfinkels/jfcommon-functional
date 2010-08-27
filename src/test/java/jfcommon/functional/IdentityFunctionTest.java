@@ -1,5 +1,5 @@
 /**
- * AllTest.java
+ * IdentityFunctionTest.java
  * 
  * Copyright 2009, 2010 Jeffrey Finkelstein
  * 
@@ -20,22 +20,33 @@
  */
 package jfcommon.functional;
 
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
-import org.junit.runners.Suite.SuiteClasses;
+import static org.junit.Assert.assertSame;
+
+import org.junit.Test;
 
 /**
- * Runs all tests in this package.
+ * Test class for the {@link IdentityFunction} class.
  * 
  * @author Jeffrey Finkelstein
  * @since 0.1
  */
-@RunWith(Suite.class)
-@SuiteClasses({ AbstractRangeTest.class, ConstantFunctionTest.class,
-    DoubleConstantFunctionTest.class, DoubleIdentityFunctionTest.class,
-    FunctionalTest.class, HashSetFromIterableTest.class,
-    IdentityFunctionTest.class, IterableStringTest.class, RangeListTest.class,
-    RangeTest.class })
-public class AllTest {
-  // intentionally unimplemented
+public class IdentityFunctionTest {
+
+  /**
+   * Test method for
+   * {@link jfcommon.functional.IdentityFunction#execute(java.lang.Object)} .
+   */
+  @Test
+  public void testExecute() {
+    final IdentityFunction<Object> function = new IdentityFunction<Object>();
+
+    final Object input1 = new Object();
+    final Object input2 = new Object();
+    final Object input3 = new Object();
+
+    assertSame(input1, function.execute(input1));
+    assertSame(input2, function.execute(input2));
+    assertSame(input3, function.execute(input3));
+  }
+
 }
