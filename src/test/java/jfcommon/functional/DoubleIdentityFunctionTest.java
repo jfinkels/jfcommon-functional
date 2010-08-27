@@ -43,8 +43,7 @@ public class DoubleIdentityFunctionTest {
 
   /**
    * Test method for
-   * {@link jfcommon.functional.example.calc.functions.DoubleIdentityFunction#newInstance()}
-   * .
+   * {@link jfcommon.functional.DoubleIdentityFunction#newInstance()} .
    */
   @Test
   public void testNewInstance() {

@@ -37,7 +37,7 @@ public class DoubleConstantFunctionTest {
 
   /**
    * Test method for
-   * {@link jfcommon.functional.example.calc.functions.DoubleConstantFunction#DoubleConstantFunction(java.lang.Double)}
+   * {@link jfcommon.functional.DoubleConstantFunction#DoubleConstantFunction(java.lang.Double)}
    * .
    */
   @Test
